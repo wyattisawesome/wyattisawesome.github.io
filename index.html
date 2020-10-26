@@ -10,12 +10,21 @@
     <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
     
     <script type="text/p5">
+let motorMount;
+
+function preload() {
+  motorMount = loadModel('assets/motor_mount_001.stl');
+}
+
 function setup() {
-  createCanvas(100, 100);
+  createCanvas(100, 100, WEBGL);
 }
 
 function draw() {
-  background(255, 0, 200);
+  background(200);
+  rotateX(frameCount * 0.01);
+  rotateY(frameCount * 0.01);
+  model(motorMount);
 }
 </script>
     
